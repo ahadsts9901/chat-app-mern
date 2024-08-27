@@ -4,11 +4,7 @@ import morgan from "morgan"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 
-import authRoutes from "./routes/auth.mjs"
-import profileRoutes from "./routes/profile.mjs"
-import userRoutes from "./routes/users.mjs"
-import chatRoutes from "./routes/chat.mjs"
-
+import { authRoutes, profileRoutes, userRoutes, chatRoutes } from "./routes/index.mjs"
 import { authMiddleware } from "./middlewares/index.mjs"
 
 const app = express()
