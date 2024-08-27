@@ -18,7 +18,6 @@ app.use(json())
 app.use(cookieParser())
 
 // routes
-
 app.use("/api/v1", authRoutes, profileRoutes, userRoutes, chatRoutes)
 
 const PORT = process.env.PORT || 5002
