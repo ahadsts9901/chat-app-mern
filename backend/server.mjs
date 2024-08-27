@@ -9,6 +9,8 @@ import profileRoutes from "./routes/profile.mjs"
 import userRoutes from "./routes/users.mjs"
 import chatRoutes from "./routes/chat.mjs"
 
+import { authMiddleware } from "./middlewares/index.mjs"
+
 const app = express()
 
 // middlewares
@@ -18,7 +20,7 @@ app.use(json())
 app.use(cookieParser())
 
 // routes
-app.use("/api/v1", authRoutes, profileRoutes, userRoutes, chatRoutes)
+app.use("/api/v1", authRoutes, authMiddleware, profileRoutes, userRoutes, chatRoutes)
 
 const PORT = process.env.PORT || 5002
 
