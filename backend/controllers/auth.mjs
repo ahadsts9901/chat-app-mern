@@ -1,7 +1,8 @@
-import { emailPattern, googleUserApi, passwordPattern, userNamePattern } from "../core.mjs"
-import { userModel } from "../models/userModel.mjs"
 import bcrypt from "bcrypt"
 import axios from "axios"
+import { emailPattern, googleUserApi, passwordPattern, userNamePattern } from "../core.mjs"
+import { userModel } from "../models/userModel.mjs"
+import { errorMessages } from "../errorMessages.mjs"
 
 export const signupController = async (req, res, next) => {
 
