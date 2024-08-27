@@ -1,0 +1,101 @@
+import { userModel } from "../models/userModel.mjs"
+import { errorMessages } from "../errorMessages.mjs"
+import { isValidObjectId } from "mongoose"
+
+export const getProfileController = async (req, res, next) => {
+
+    try {
+
+        const { userId } = req?.params
+
+        if (!userId || userId?.trim() === "") {
+            return res.status(400).send({
+                message: errorMessages?.idIsMissing
+            })
+        }
+
+        if (!isValidObjectId(userId)) {
+            return res.status(400).send({
+                message: errorMessages?.invalidId
+            })
+        }
+
+        const user = await userModel?.findById(userId).exec()
+
+        if (!user) {
+            return res.status(400).send({
+                message: errorMessages?.userNotFound
+            })
+        }
+
+        const data = {
+            userName: user?.userName,
+            email: user?.email,
+            profilePhoto: user?.profilePhoto,
+            createdOn: user?.profilePhoto,
+            isActive: user?.isActive
+        }
+
+        res.send({
+            message: "profile fetched",
+            data: data
+        })
+
+    } catch (error) {
+        console.error(error)
+        res.status(500).send({
+            message: errorMessages?.serverError,
+            error: error?.message
+        })
+    }
+
+}
+
+export const getCurrentProfileController = async (req, res, next) => {
+
+    try {
+
+        const userId = req?.currentUser?._id
+
+        if (!userId || userId?.trim() === "") {
+            return res.status(400).send({
+                message: errorMessages?.idIsMissing
+            })
+        }
+
+        if (!isValidObjectId(userId)) {
+            return res.status(400).send({
+                message: errorMessages?.invalidId
+            })
+        }
+
+        const user = await userModel?.findById(userId).exec()
+
+        if (!user) {
+            return res.status(400).send({
+                message: errorMessages?.userNotFound
+            })
+        }
+
+        const data = {
+            userName: user?.userName,
+            email: user?.email,
+            profilePhoto: user?.profilePhoto,
+            createdOn: user?.profilePhoto,
+            isActive: user?.isActive
+        }
+
+        res.send({
+            message: "profile fetched",
+            data: data
+        })
+
+    } catch (error) {
+        console.error(error)
+        res.status(500).send({
+            message: errorMessages?.serverError,
+            error: error?.message
+        })
+    }
+
+}
