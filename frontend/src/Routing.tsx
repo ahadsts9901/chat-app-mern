@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import { baseUrl } from "./core";
+import { baseUrl } from "./utils/core";
 import { login, logout } from "./redux/user";
 import SplashScreen from "./pages/splashScreen/SplashScreen";
 import Login from "./pages/login/Login";
