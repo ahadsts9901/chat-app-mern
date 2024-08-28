@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import { baseUrl } from "../../utils/core"
 import { SmallSplashScreen } from "../splashScreen/SplashScreen"
+import Header from "./components/contacts/Header"
 
 const Chat = ({ userId }: any) => {
 
@@ -36,7 +37,10 @@ const Chat = ({ userId }: any) => {
     <>
       <div className="chat">
         {
-          !user ? <div className="noChat"><SmallSplashScreen /></div> : "chat"
+          !user ? <div className="noChat"><SmallSplashScreen /></div> :
+            <>
+              <Header user={user} />
+            </>
         }
       </div>
     </>
