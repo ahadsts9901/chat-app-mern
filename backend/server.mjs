@@ -1,4 +1,5 @@
 import "dotenv/config"
+import "./utils/mongodb.mjs"
 import express, { json } from "express"
 import morgan from "morgan"
 import cors from "cors"
