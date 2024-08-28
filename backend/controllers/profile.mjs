@@ -1,4 +1,4 @@
-import { userModel } from "../models/userModel.mjs"
+import { userModel } from "../models/index.mjs"
 import { errorMessages } from "../utils/errorMessages.mjs"
 import { isValidObjectId } from "mongoose"
 

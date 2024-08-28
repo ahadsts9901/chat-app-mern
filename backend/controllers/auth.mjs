@@ -1,5 +1,5 @@
 import axios from "axios"
-import { userModel } from "../models/userModel.mjs"
+import { userModel } from "../models/index.mjs"
 import { googleUserApi } from "../utils/core.mjs"
 import { errorMessages } from "../utils/errorMessages.mjs"
 

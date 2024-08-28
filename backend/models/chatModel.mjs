@@ -22,12 +22,6 @@ let chatSchema = new Schema({
         default: Date.now
     },
 
-    contentUrl: {
-        type: String,
-        default: null,
-        maxlength: 1000,
-    },
-
 });
 
 let chatModel;

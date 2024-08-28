@@ -21,4 +21,5 @@ export const errorMessages = {
     videoMessageSizeError: "video size must be less than 25mb",
     messageSend: 'message sent successfully',
     userNotFound: "user not found",
+    messageRequired: "message is required"
 }

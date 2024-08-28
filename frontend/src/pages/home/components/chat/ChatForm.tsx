@@ -20,7 +20,7 @@ const ChatForm = ({ user }: any) => {
 
             await axios.post(`${baseUrl}/api/v1/message`, {
                 to_id: user?._id,
-                message: text
+                text: text
             }, { withCredentials: true })
 
         } catch (error) {
