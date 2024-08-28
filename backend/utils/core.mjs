@@ -11,3 +11,7 @@ export const cloudinaryChatFilesFolder = "chat-app-mern-sts/chat-files"
 export const profilePictureUploadFolder = "chat-app-mern-sts/profile-pictures"
 export const defaultProfilePicture = "https://res.cloudinary.com/do6sd9nyx/image/upload/v1706343891/we-app-nextjs/Assets/profile-picture_ufgahm.png"
 export const googleUserApi = "https://www.googleapis.com/oauth2/v3/userinfo"
+
+export const allowedOrigins = "http://localhost:5173"
+
+export let globalIoObject = { io: null }

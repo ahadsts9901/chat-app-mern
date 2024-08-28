@@ -1,6 +1,7 @@
 import { isValidObjectId } from "mongoose"
 import { errorMessages } from "../utils/errorMessages.mjs"
 import { chatModel } from "../models/index.mjs"
+import { globalIoObject } from "../utils/core.mjs"
 
 export const sendMessageController = async (req, res) => {
 
@@ -47,15 +48,22 @@ export const sendMessageController = async (req, res) => {
 
         const resp = await chatModel.create(message)
 
-        const emitMessage = {
+        const messageToEmit = {
             ...message,
             _id: resp?._id,
             createdOn: resp?.createdOn
         }
 
+        if (globalIoObject?.io) {
+
+            console.log(`emitting message to ${to_id}`)
+            globalIoObject?.io?.emit(`chat-message-${to_id}`, messageToEmit)
+
+        }
+
         res.send({
             message: "message sent",
-            data: emitMessage
+            data: messageToEmit
         })
 
     } catch (error) {
