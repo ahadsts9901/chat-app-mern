@@ -22,6 +22,7 @@
 ## Frontend
 
 - Typescript
+- SCSS
 - Redux Toolkit
 - Socket.io Client
 - Material UI
