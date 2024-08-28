@@ -3,6 +3,7 @@ import Contact from "./components/contacts/Contact"
 import Header from "./components/contacts/Header"
 
 const Contacts = () => {
+
   return (
     <>
       <div className="contacts">
