@@ -21,4 +21,15 @@
 }
 .chatForm svg {
   color: #fff;
+}
+
+.conversation {
+  width: 100%;
+  height: 100%;
+  background-color: #272529;
+  background-image: url("../../../../assets/background.jpg");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 70%;
+  filter: brightness(80%);
 }/*# sourceMappingURL=Main.css.map */
