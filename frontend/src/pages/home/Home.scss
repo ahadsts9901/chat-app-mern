@@ -1,3 +1,11 @@
+$purple: #7b30f7;
+$lightPurple: #c2b4e0;
+$white: #fff;
+$black: #1c1c1c;
+$lightBlack: #272529;
+$grey: #2d2d2d;
+$imageBg: #dedede;
+
 .home {
     width: 100vw;
     height: 100vh;
@@ -13,6 +21,15 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+    }
+
+    .contacts {
+        .users {
+            width: 100%;
+            height: calc(100vh - 63px);
+            overflow-y: auto;
+            background-color: $lightBlack;
+        }
     }
 
 }

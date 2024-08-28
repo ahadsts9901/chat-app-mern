@@ -13,4 +13,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+.home .contacts .users {
+  width: 100%;
+  height: calc(100vh - 63px);
+  overflow-y: auto;
+  background-color: #272529;
 }/*# sourceMappingURL=Home.css.map */

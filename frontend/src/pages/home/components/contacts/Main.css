@@ -2,18 +2,21 @@
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #111112;
+  background-color: #1c1c1c;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 0.7em;
   gap: 1em;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 .header h3 {
   width: -moz-fit-content;
   width: fit-content;
   text-align: left;
-  color: #fff;
+  color: #c2b4e0;
   font-size: 1em;
 }
 .header img {
@@ -24,4 +27,37 @@
   -o-object-position: center;
      object-position: center;
   border-radius: 200px;
+  background-color: #dedede;
+  cursor: pointer;
+}
+
+.contact {
+  width: 100%;
+  padding: 0.7em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+  cursor: pointer;
+  background-color: #272529;
+  border-bottom: 1px solid #2d2d2d;
+}
+.contact:hover {
+  background-color: #1c1c1c;
+}
+.contact p {
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  font-size: 0.8em;
+}
+.contact img {
+  width: 35px;
+  height: 35px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 200px;
+  background-color: #dedede;
 }/*# sourceMappingURL=Main.css.map */

@@ -33,7 +33,8 @@ export const getProfileController = async (req, res, next) => {
             email: user?.email,
             profilePhoto: user?.profilePhoto,
             createdOn: user?.profilePhoto,
-            isActive: user?.isActive
+            isActive: user?.isActive,
+            _id: user?._id
         }
 
         res.send({
@@ -82,7 +83,8 @@ export const getCurrentProfileController = async (req, res, next) => {
             email: user?.email,
             profilePhoto: user?.profilePhoto,
             createdOn: user?.profilePhoto,
-            isActive: user?.isActive
+            isActive: user?.isActive,
+            _id: user?._id
         }
 
         res.send({
