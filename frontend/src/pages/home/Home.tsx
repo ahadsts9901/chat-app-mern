@@ -1,6 +1,15 @@
+import Chat from "./Chat"
+import Contacts from "./Contacts"
+import "./Home.css"
+
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <div className="home">
+        <Contacts />
+        <Chat />
+      </div>
+    </>
   )
 }
 
