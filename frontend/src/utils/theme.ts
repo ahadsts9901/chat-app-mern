@@ -11,7 +11,7 @@ export const themeSchema: any = {
             light: '#915eff',
             main: '#7b30f7',
             dark: '#6d1ee3',
-            contrastText: '#FFFFFF',
+            contrastText: '#fff',
         },
     },
     typography: {

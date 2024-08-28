@@ -1,0 +1,23 @@
+.splashScreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  background-color: #111112;
+}
+.splashScreen img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.splashScreen h1 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}/*# sourceMappingURL=SplashScreen.css.map */

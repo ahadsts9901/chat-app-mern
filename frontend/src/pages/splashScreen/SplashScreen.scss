@@ -1,0 +1,28 @@
+$purple: #7b30f7;
+$white: #fff;
+$black: #111112;
+
+.splashScreen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    background-color: $black;
+
+    img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: center;
+        color: $white;
+    }
+
+}
