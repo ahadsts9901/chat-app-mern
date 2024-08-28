@@ -66,3 +66,64 @@ export const sendMessageController = async (req, res) => {
     }
 
 }
+
+export const getMessagesController = async (req, res) => {
+
+    const from_id = req?.currentUser?._id
+    const to_id = req?.params?.userId
+
+    if (!from_id || from_id?.trim === "") {
+        return res.status(400).send({
+            message: errorMessages?.unAuthError
+        })
+    }
+
+    if (!isValidObjectId(from_id)) {
+        return res.status(400).send({
+            message: errorMessages?.unAuthError
+        })
+    }
+
+    if (!to_id || to_id?.trim === "") {
+        return res.status(400).send({
+            message: errorMessages?.idIsMissing
+        })
+    }
+
+    if (!isValidObjectId(to_id)) {
+        return res.status(400).send({
+            message: errorMessages?.invalidId
+        })
+    }
+
+    try {
+
+        const pipeline = {
+            $or: [
+                {
+                    to_id: to_id,
+                    from_id: from_id,
+                },
+                {
+                    from_id: to_id,
+                    to_id: from_id,
+                }
+            ]
+        }
+
+        const messages = chatModel.find(pipeline).sort({ _id: -1 }).exec()
+
+        res.send({
+            message: "messages fetched",
+            data: messages
+        })
+
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({
+            message: errorMessages?.serverError,
+            error: error?.message
+        })
+    }
+
+}

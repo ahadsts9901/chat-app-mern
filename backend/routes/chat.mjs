@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { sendMessageController } from "../controllers/index.mjs"
+import { getMessagesController, sendMessageController } from "../controllers/index.mjs"
 
 const router = Router()
 
 router.post("/message", sendMessageController)
+
+router.get("/messages/:userId", getMessagesController)
 
 export default router
