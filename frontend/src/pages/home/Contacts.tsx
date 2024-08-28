@@ -4,8 +4,11 @@ import Contact from "./components/contacts/Contact"
 import Header from "./components/contacts/Header"
 import axios from "axios"
 import { baseUrl } from "../../utils/core"
+import { useSelector } from "react-redux"
 
 const Contacts = () => {
+
+  const currentUser = useSelector((state: any) => state?.user)
 
   const [users, setUsers] = useState<any[]>([])
 
@@ -30,7 +33,7 @@ const Contacts = () => {
   return (
     <>
       <div className="contacts">
-        <Header />
+        <Header user={currentUser} />
         <div className="users">
           {
             users?.map((user: any, i: number) => <Contact key={i} user={user} />)
