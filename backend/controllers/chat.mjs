@@ -136,3 +136,39 @@ export const getMessagesController = async (req, res) => {
     }
 
 }
+
+export const deleteMessageController = async (req, res) => {
+
+    const { messageId } = req?.params
+
+    if (!messageId || messageId?.trim === "") {
+        return res.status(400).send({
+            message: errorMessages?.idIsMissing
+        })
+    }
+
+    if (!isValidObjectId(messageId)) {
+        return res.status(400).send({
+            message: errorMessages?.invalidId
+        })
+    }
+
+    try {
+
+        const deleteResponse = await chatModel.findByIdandDelete(messageId)
+
+        console.log(deleteResponse)
+
+        res.send({
+            message: "messages deleted",
+        })
+
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({
+            message: errorMessages?.serverError,
+            error: error?.message
+        })
+    }
+
+}
