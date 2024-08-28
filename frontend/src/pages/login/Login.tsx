@@ -1,6 +1,11 @@
+import "./Login.css"
+import SplashScreen from "../splashScreen/SplashScreen"
+
 const Login = () => {
   return (
-    <div>Login</div>
+    <>
+      <SplashScreen showButton={true} />
+    </>
   )
 }
 
