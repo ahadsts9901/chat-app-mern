@@ -111,7 +111,7 @@ export const getMessagesController = async (req, res) => {
             ]
         }
 
-        const messages = chatModel.find(pipeline).sort({ _id: -1 }).exec()
+        const messages = await chatModel.find(pipeline).sort({ _id: -1 }).exec()
 
         res.send({
             message: "messages fetched",
