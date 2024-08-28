@@ -8,8 +8,9 @@ import { logout } from "../../../../redux/user"
 import ConfirmAlertMUI from "../../../../mui/ConfirmAlertMui"
 import { IconButton, Menu, MenuItem } from "@mui/material"
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { IoArrowBackSharp } from "react-icons/io5";
 
-const LogoutDrop = () => {
+export const LogoutDrop = () => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -110,13 +111,26 @@ const LogoutDrop = () => {
 
 }
 
-const Header = ({ user, showDrop }: any) => {
+export const BackButton = () => {
+
+    return (
+        <>
+            <IconButton size="small" onClick={() => window.history.back()}>
+                <IoArrowBackSharp style={{ color: "#fff", fontSize: "0.8em" }} />
+            </IconButton>
+        </>
+    )
+
+}
+
+const Header = ({ user, showDrop, showBackButton }: any) => {
 
     const currentUser = useSelector((state: any) => state?.user)
 
     return (
         <>
             <div className="header">
+                {showBackButton && <BackButton />}
                 <img src={user?.profilePhoto ? user?.profilePhoto : defaultProfilePicture} alt="profile photo"
                     onError={(e: any) => e.target.src = defaultProfilePicture}
                 />
@@ -126,9 +140,7 @@ const Header = ({ user, showDrop }: any) => {
                             user?.userName ? user?.userName : "Chat App"
                     }
                 </h3>
-                {
-                    showDrop && <LogoutDrop />
-                }
+                {showDrop && <LogoutDrop />}
             </div>
         </>
     )
