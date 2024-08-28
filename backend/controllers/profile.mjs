@@ -101,3 +101,23 @@ export const getCurrentProfileController = async (req, res, next) => {
     }
 
 }
+
+export const logoutcontroller = (req, res) => {
+
+    try {
+
+        res.clearCookie("hart")
+
+        res.send({
+            message: "logout successfull"
+        })
+
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({
+            message: errorMessages?.serverError,
+            error: error?.message
+        })
+    }
+
+}
