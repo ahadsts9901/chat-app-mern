@@ -7,7 +7,7 @@ import { baseUrl } from "../../../../utils/core";
 
 const ChatForm = ({ user }: any) => {
 
-    const [text, setText] = useState<null | string>(null)
+    const [text, setText] = useState<string>("")
 
     const sendMessage = async (e: any) => {
 
@@ -23,6 +23,8 @@ const ChatForm = ({ user }: any) => {
                 text: text
             }, { withCredentials: true })
 
+            setText("")
+
         } catch (error) {
             console.error(error)
         }
@@ -32,8 +34,8 @@ const ChatForm = ({ user }: any) => {
     return (
         <>
             <form className="chatForm" onSubmit={sendMessage}>
-                <input type="text" placeholder="Type a message" onChange={(e: any) => setText(e?.target?.value)} />
-                <IconButton><IoMdSend style={{ fontSize: "0.8em" }} /></IconButton>
+                <input type="text" value={text} placeholder="Type a message" onChange={(e: any) => setText(e?.target?.value)} />
+                <IconButton type="submit"><IoMdSend style={{ fontSize: "0.8em" }} /></IconButton>
             </form>
         </>
     )
