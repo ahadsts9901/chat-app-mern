@@ -155,9 +155,28 @@ export const deleteMessageController = async (req, res) => {
 
     try {
 
+        const message = await chatModel.findById(messageId)
+
+        if (!message) {
+            return res.status(404).send({
+                message: errorMessages?.messageNotFound
+            })
+        }
+
+        if (message?.from_id != req?.currentUser?._id) {
+            return res.status(401).send({
+                message: errorMessages?.unAuthError
+            })
+        }
+
         const deleteResponse = await chatModel.findByIdAndDelete(messageId)
 
-        console.log(deleteResponse)
+        if (globalIoObject?.io) {
+
+            console.log(`emitting message to ${deleteResponse?.to_id}`)
+            globalIoObject?.io?.emit(`delete-chat-message-${deleteResponse?.to_id}`, { deletedMessageId: deleteResponse?._id })
+
+        }
 
         res.send({
             message: "messages deleted",

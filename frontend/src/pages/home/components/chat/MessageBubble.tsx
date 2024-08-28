@@ -32,12 +32,11 @@ export const RightChat = ({ data, setMessages }: any) => {
     )
 }
 
-export const LeftChat = ({ data, setMessages }: any) => {
+export const LeftChat = ({ data }: any) => {
 
     return (
         <>
             <div className="leftChatBubble">
-                <ActionsDropdown id={data?._id} setMessages={setMessages} />
                 <p>{data?.text}</p>
                 <TimeAndRead time={data?.time} />
             </div>
