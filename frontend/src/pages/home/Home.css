@@ -21,4 +21,22 @@
   height: calc(100vh - 63px);
   overflow-y: auto;
   background-color: #272529;
+}
+.home .contacts .users::-webkit-scrollbar {
+  width: 10px;
+}
+.home .contacts .users::-webkit-scrollbar-track {
+  background-color: #272529;
+}
+.home .contacts .users::-webkit-scrollbar-thumb {
+  background-color: #1c1c1c;
+}
+.home .contacts .users::-moz-scrollbar {
+  width: 10px;
+}
+.home .contacts .users::-moz-scrollbar-track {
+  background-color: #272529;
+}
+.home .contacts .users::-moz-scrollbar-thumb {
+  background-color: #1c1c1c;
 }/*# sourceMappingURL=Home.css.map */
