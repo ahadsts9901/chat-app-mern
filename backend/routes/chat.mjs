@@ -7,6 +7,6 @@ router.post("/message", sendMessageController)
 
 router.get("/messages/:userId", getMessagesController)
 
-router.get("/message/:messageId", deleteMessageController)
+router.delete("/message/:messageId", deleteMessageController)
 
 export default router

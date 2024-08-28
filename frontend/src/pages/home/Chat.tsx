@@ -86,7 +86,7 @@ const Chat = ({ userId }: any) => {
           !user ? <div className="noChat"><SmallSplashScreen /></div> :
             <>
               <Header user={user} />
-              <Conversation messages={messages} />
+              <Conversation messages={messages} setMessages={setMessages} />
               <ChatForm user={user} setMessages={setMessages} />
             </>
         }
