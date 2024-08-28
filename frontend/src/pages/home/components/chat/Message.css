@@ -1,0 +1,91 @@
+.leftChatBubble {
+  min-width: 6em;
+  max-width: 80%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #7b30f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+  gap: 4px;
+}
+.leftChatBubble p {
+  font-size: 0.8em;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  padding: 0.5em 0.5em 0 0.5em;
+  line-height: 1.3em;
+}
+.leftChatBubble .timeAndRead {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.leftChatBubble .timeAndRead .readReciepts {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 0.3em;
+}
+.leftChatBubble .timeAndRead .readReciepts svg {
+  color: #fff;
+  font-size: 0.8em;
+}
+.leftChatBubble .timeAndRead .time {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.6em;
+  color: #fff;
+  padding: 0;
+}
+
+.rightChatBubble {
+  min-width: 6em;
+  max-width: 80%;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 4px;
+  border-radius: 4px;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-end;
+  gap: 4px;
+}
+.rightChatBubble p {
+  font-size: 0.8em;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  padding: 0.5em 0.5em 0 0.5em;
+  line-height: 1.3em;
+}
+.rightChatBubble .timeAndRead {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.rightChatBubble .timeAndRead .readReciepts {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 0.3em;
+}
+.rightChatBubble .timeAndRead .readReciepts svg {
+  color: #fff;
+  font-size: 0.8em;
+}
+.rightChatBubble .timeAndRead .time {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 0.6em;
+  color: #fff;
+  padding: 0;
+}/*# sourceMappingURL=Message.css.map */

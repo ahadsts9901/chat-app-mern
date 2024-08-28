@@ -2,8 +2,8 @@ import "./Main.css"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import MessageBubble from "./MessageBubble"
 import { baseUrl } from "../../../../utils/core"
-import Message from "./Message"
 
 const Conversation = () => {
 
@@ -37,7 +37,7 @@ const Conversation = () => {
         <>
             <div className="conversation">
                 {
-                    messages?.map((message: any, i: number) => <Message key={i} message={message} />)
+                    messages?.map((message: any, i: number) => <MessageBubble key={i} message={message} />)
                 }
             </div>
         </>

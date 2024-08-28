@@ -1,0 +1,87 @@
+$purple: #7b30f7;
+$lightPurple: #c2b4e0;
+$white: #fff;
+$black: #1c1c1c;
+$lightBlack: #272529;
+$grey: #2d2d2d;
+$imageBg: #dedede;
+
+@mixin chatBubble($background, $alignSelf) {
+    min-width: 6em;
+    max-width: 80%;
+    height: fit-content;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: $alignSelf;
+    gap: 4px;
+}
+
+@mixin textMessage() {
+    font-size: 0.8em;
+    width: 100%;
+    text-align: left;
+    color: $white;
+    padding: 0.5em 0.5em 0 0.5em;
+    line-height: 1.3em;
+}
+
+@mixin timeAndRead() {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .readReciepts {
+
+        width: fit-content;
+        padding: 0 0.3em;
+
+        svg {
+            color: $white;
+            font-size: 0.8em;
+        }
+
+    }
+
+    .time {
+        width: fit-content;
+        font-size: 0.6em;
+        color: $white;
+        padding: 0;
+    }
+
+}
+
+.leftChatBubble {
+
+    @include chatBubble($purple, flex-start);
+
+    p {
+        @include textMessage()
+    }
+
+    .timeAndRead {
+        @include timeAndRead()
+    }
+
+}
+
+.rightChatBubble {
+
+    @include chatBubble($black, flex-end);
+
+    p {
+        @include textMessage()
+    }
+
+    .timeAndRead {
+        @include timeAndRead()
+    }
+
+}
