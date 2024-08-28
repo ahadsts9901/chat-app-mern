@@ -5,7 +5,7 @@ export const getAllUsersController = async (req, res) => {
 
     try {
 
-        const users = await userModel.find({}).exec()
+        const users = await userModel.find({}).sort({ _id: -1 }).exec()
 
         return res.send({
             message: "users fetched",
