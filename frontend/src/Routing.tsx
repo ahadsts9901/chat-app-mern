@@ -45,6 +45,8 @@ const Routing = () => {
 
     const currentUser = useSelector((state: any) => state?.user)
 
+    console.log("currentUser", currentUser)
+
     useEffect(() => {
         checkLoginStatus()
     }, [])
