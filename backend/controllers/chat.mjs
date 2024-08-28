@@ -114,8 +114,8 @@ export const getMessagesController = async (req, res) => {
                     from_id: from_id,
                 },
                 {
-                    from_id: to_id,
                     to_id: from_id,
+                    from_id: to_id,
                 }
             ]
         }
