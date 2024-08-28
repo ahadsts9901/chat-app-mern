@@ -14,13 +14,15 @@ $imageBg: #dedede;
     align-items: flex-start;
 
     .contacts,
-    .chat {
+    .chat,
+    .noChat {
         width: 50%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        overflow-x: hidden;
     }
 
     .contacts {
