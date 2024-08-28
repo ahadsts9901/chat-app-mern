@@ -8,6 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react"
+import ConfirmAlertMUI from "../../../../mui/ConfirmAlertMui"
 
 export const TimeAndRead = ({ time }: any) => {
     return (
@@ -46,23 +47,46 @@ export const LeftChat = ({ data, setMessages }: any) => {
 
 export const ActionsDropdown = ({ id, setMessages }: any) => {
 
+    const [showActionModal, setShowActionModal] = useState<boolean>(false)
+    const [actionModalData, setActionModalData] = useState<any>(null)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
     const deleteMessage = async (messageId: string) => {
 
         if (!messageId || messageId?.trim() === "") return
 
         try {
 
+            setIsLoading(true)
+
             await axios.delete(`${baseUrl}/api/v1/message/${messageId}`, { withCredentials: true })
+
             setMessages((messages: any) => messages?.filter((message: any) => message?._id !== messageId))
+
+            setIsLoading(false)
 
         } catch (error) {
             console.error(error)
+            setIsLoading(false)
         }
 
     }
 
+    const openDeleteMessageModal = () => {
+
+        setActionModalData({
+            title: "Delete message?",
+            description: "Are you sure you want to delete this message?. The action cannot be undone.",
+            fun: () => deleteMessage(id)
+        })
+
+        handleClose()
+        setShowActionModal(true)
+
+    }
+
     const options = [
-        { label: "Delete", fun: deleteMessage },
+        { label: "Delete", fun: openDeleteMessageModal },
     ]
 
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
@@ -75,6 +99,14 @@ export const ActionsDropdown = ({ id, setMessages }: any) => {
 
     return (
         <>
+            <ConfirmAlertMUI
+                open={showActionModal}
+                setOpen={setShowActionModal}
+                title={actionModalData?.title}
+                description={actionModalData?.description}
+                fun={actionModalData?.fun}
+                isLoading={isLoading}
+            />
             <div className="drop-button-message">
                 <IconButton
                     aria-label="more"
