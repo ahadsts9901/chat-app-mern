@@ -33,7 +33,7 @@ const Contacts = () => {
   return (
     <>
       <div className="contacts">
-        <Header user={currentUser} />
+        <Header user={currentUser} showDrop={true} />
         <div className="users">
           {
             users?.map((user: any, i: number) => <Contact key={i} user={user} />)
