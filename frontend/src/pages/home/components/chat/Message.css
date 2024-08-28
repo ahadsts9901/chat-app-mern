@@ -4,6 +4,7 @@
   height: -moz-fit-content;
   height: fit-content;
   padding: 4px;
+  padding-top: 8px;
   border-radius: 4px;
   background-color: #7b30f7;
   display: flex;
@@ -12,6 +13,13 @@
   align-items: flex-start;
   align-self: flex-start;
   gap: 4px;
+  position: relative;
+}
+.leftChatBubble .drop-button-message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
 }
 .leftChatBubble p {
   font-size: 0.8em;
@@ -50,6 +58,7 @@
   height: -moz-fit-content;
   height: fit-content;
   padding: 4px;
+  padding-top: 8px;
   border-radius: 4px;
   background-color: #1c1c1c;
   display: flex;
@@ -58,6 +67,13 @@
   align-items: flex-start;
   align-self: flex-end;
   gap: 4px;
+  position: relative;
+}
+.rightChatBubble .drop-button-message {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
 }
 .rightChatBubble p {
   font-size: 0.8em;

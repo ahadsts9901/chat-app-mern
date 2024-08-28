@@ -6,7 +6,7 @@ import { baseUrl } from "../../../../utils/core"
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react"
 
 export const TimeAndRead = ({ time }: any) => {
@@ -75,7 +75,7 @@ export const ActionsDropdown = ({ id, setMessages }: any) => {
 
     return (
         <>
-            <div>
+            <div className="drop-button-message">
                 <IconButton
                     aria-label="more"
                     id="long-button"
@@ -83,8 +83,9 @@ export const ActionsDropdown = ({ id, setMessages }: any) => {
                     aria-expanded={open ? 'true' : undefined}
                     aria-haspopup="true"
                     onClick={handleClick}
+                    size="small"
                 >
-                    <MoreVertIcon />
+                    <IoIosArrowDown style={{ fontSize: "0.5em", color: "#fff" }} />
                 </IconButton>
                 <Menu
                     id="long-menu"

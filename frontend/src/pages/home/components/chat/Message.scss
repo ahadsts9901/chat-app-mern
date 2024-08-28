@@ -7,10 +7,12 @@ $grey: #2d2d2d;
 $imageBg: #dedede;
 
 @mixin chatBubble($background, $alignSelf) {
+
     min-width: 6em;
     max-width: 80%;
     height: fit-content;
     padding: 4px;
+    padding-top: 8px;
     border-radius: 4px;
     background-color: $background;
     display: flex;
@@ -19,6 +21,15 @@ $imageBg: #dedede;
     align-items: flex-start;
     align-self: $alignSelf;
     gap: 4px;
+    position: relative;
+
+    .drop-button-message {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 10;
+    }
+
 }
 
 @mixin textMessage() {
