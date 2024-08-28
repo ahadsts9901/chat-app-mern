@@ -39,4 +39,10 @@
 }
 .home .contacts .users::-moz-scrollbar-thumb {
   background-color: #1c1c1c;
+}
+
+@media (max-width: 700px) {
+  .home .chat {
+    width: 400px;
+  }
 }/*# sourceMappingURL=Home.css.map */

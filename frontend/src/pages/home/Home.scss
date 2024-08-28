@@ -62,3 +62,11 @@ $imageBg: #dedede;
     }
 
 }
+
+@media(max-width: 700px) {
+    .home {
+        .chat {
+            width: 400px;
+        }
+    }
+}
