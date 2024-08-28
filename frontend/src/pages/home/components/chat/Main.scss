@@ -58,11 +58,11 @@ $imageBg: #dedede;
     }
 
     &::-webkit-scrollbar-track {
-        background-color: $black;
+        background-color: $lightBlack;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: $lightBlack;
+        background-color: $black;
     }
 
     &::-moz-scrollbar {
@@ -70,11 +70,11 @@ $imageBg: #dedede;
     }
 
     &::-moz-scrollbar-track {
-        background-color: $black;
+        background-color: $lightBlack;
     }
 
     &::-moz-scrollbar-thumb {
-        background-color: $lightBlack;
+        background-color: $black;
     }
 
 }

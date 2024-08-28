@@ -54,7 +54,8 @@ export const sendMessageController = async (req, res) => {
         }
 
         res.send({
-            message: "message sent"
+            message: "message sent",
+            data: emitMessage
         })
 
     } catch (error) {

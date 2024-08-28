@@ -10,10 +10,14 @@ import Conversation from "./components/chat/Conversation"
 const Chat = ({ userId }: any) => {
 
   const [user, setUser] = useState<any>(null)
+  const [messages, setMessages] = useState<any[]>([])
 
   useEffect(() => {
 
-    if (userId) getUserProfile(userId)
+    if (!userId || userId?.trim() === "") return
+
+    getUserProfile(userId)
+    getMessages(userId)
 
   }, [userId])
 
@@ -35,6 +39,22 @@ const Chat = ({ userId }: any) => {
 
   }
 
+  const getMessages = async (userId: string) => {
+
+    if (!userId || userId?.trim() === "") return
+
+    try {
+
+      const resp = await axios.get(`${baseUrl}/api/v1/messages/${userId}`, { withCredentials: true })
+
+      setMessages(resp?.data?.data)
+
+    } catch (error) {
+      console.error(error)
+    }
+
+  }
+
   return (
     <>
       <div className="chat">
@@ -42,8 +62,8 @@ const Chat = ({ userId }: any) => {
           !user ? <div className="noChat"><SmallSplashScreen /></div> :
             <>
               <Header user={user} />
-              <Conversation />
-              <ChatForm user={user} />
+              <Conversation messages={messages} />
+              <ChatForm user={user} setMessages={setMessages} />
             </>
         }
       </div>

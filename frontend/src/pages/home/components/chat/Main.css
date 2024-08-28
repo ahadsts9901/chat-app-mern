@@ -44,17 +44,17 @@
   width: 10px;
 }
 .conversation::-webkit-scrollbar-track {
-  background-color: #1c1c1c;
+  background-color: #272529;
 }
 .conversation::-webkit-scrollbar-thumb {
-  background-color: #272529;
+  background-color: #1c1c1c;
 }
 .conversation::-moz-scrollbar {
   width: 10px;
 }
 .conversation::-moz-scrollbar-track {
-  background-color: #1c1c1c;
+  background-color: #272529;
 }
 .conversation::-moz-scrollbar-thumb {
-  background-color: #272529;
+  background-color: #1c1c1c;
 }/*# sourceMappingURL=Main.css.map */
