@@ -45,4 +45,10 @@
   .home .chat {
     width: 400px;
   }
+}
+@media (max-width: 550px) {
+  .home .contacts,
+  .home .chat {
+    width: 100%;
+  }
 }/*# sourceMappingURL=Home.css.map */

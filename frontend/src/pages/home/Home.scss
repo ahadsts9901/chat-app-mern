@@ -70,3 +70,14 @@ $imageBg: #dedede;
         }
     }
 }
+
+
+@media(max-width: 550px) {
+    .home {
+
+        .contacts,
+        .chat {
+            width: 100%;
+        }
+    }
+}
