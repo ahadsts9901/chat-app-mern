@@ -13,6 +13,30 @@ export const themeSchema: any = {
             dark: '#6d1ee3',
             contrastText: '#fff',
         },
+        success: {
+            light: '#19B373',
+            main: '#138656',
+            dark: '#0D5939',
+            contrastText: '#E9FCF4',
+        },
+        error: {
+            light: '#F07575',
+            main: '#EE5D5D',
+            dark: '#EC4646',
+            contrastText: '#FCE8E8',
+        },
+        warning: {
+            light: '#F4E98B',
+            main: '#F1E574',
+            dark: '#F0E15C',
+            contrastText: '#453F07',
+        },
+        info: {
+            light: '#0081CC',
+            main: '#0071B3',
+            dark: '#006199',
+            contrastText: '#E6F6FF',
+        },
     },
     typography: {
         fontFamily: 'Josefin Sans, sans-serif',
