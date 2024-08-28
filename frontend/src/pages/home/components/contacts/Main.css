@@ -61,4 +61,8 @@
      object-position: center;
   border-radius: 200px;
   background-color: #dedede;
+}
+
+.active-contact {
+  background-color: #1c1c1c;
 }/*# sourceMappingURL=Main.css.map */

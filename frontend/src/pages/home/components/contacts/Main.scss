@@ -50,9 +50,9 @@ $imageBg: #dedede;
     background-color: $lightBlack;
     border-bottom: 1px solid $grey;
 
-    &:hover{
+    &:hover {
         background-color: $black;
-    }    
+    }
 
     p {
         width: 100%;
@@ -70,4 +70,8 @@ $imageBg: #dedede;
         background-color: $imageBg;
     }
 
+}
+
+.active-contact {
+    background-color: $black;
 }
