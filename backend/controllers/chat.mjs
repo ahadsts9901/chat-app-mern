@@ -155,7 +155,7 @@ export const deleteMessageController = async (req, res) => {
 
     try {
 
-        const deleteResponse = await chatModel.findByIdandDelete(messageId)
+        const deleteResponse = await chatModel.findByIdAndDelete(messageId)
 
         console.log(deleteResponse)
 

@@ -62,8 +62,8 @@ export const ActionsDropdown = ({ id, setMessages }: any) => {
             await axios.delete(`${baseUrl}/api/v1/message/${messageId}`, { withCredentials: true })
 
             setMessages((messages: any) => messages?.filter((message: any) => message?._id !== messageId))
-
             setIsLoading(false)
+            setShowActionModal(false)
 
         } catch (error) {
             console.error(error)
@@ -121,15 +121,12 @@ export const ActionsDropdown = ({ id, setMessages }: any) => {
                 </IconButton>
                 <Menu
                     id="long-menu"
-                    MenuListProps={{
-                        'aria-labelledby': 'long-button',
-                    }}
                     anchorEl={anchorEl}
                     open={open}
                     onClose={handleClose}
                 >
                     {options.map((option: any, i: number) => (
-                        <MenuItem key={i} onClick={option?.fun}>
+                        <MenuItem key={i} onClick={option?.fun} sx={{ fontSize: "0.7em" }}>
                             {option?.label}
                         </MenuItem>
                     ))}
