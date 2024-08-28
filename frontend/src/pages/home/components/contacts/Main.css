@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #111112;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.7em;
+  gap: 1em;
+}
+.header h3 {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: left;
+  color: #fff;
+  font-size: 1em;
+}
+.header img {
+  width: 40px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 200px;
+}/*# sourceMappingURL=Main.css.map */
