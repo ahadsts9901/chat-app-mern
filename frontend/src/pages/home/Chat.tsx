@@ -43,7 +43,7 @@ const Chat = ({ userId }: any) => {
             <>
               <Header user={user} />
               <Conversation />
-              <ChatForm />
+              <ChatForm user={user} />
             </>
         }
       </div>
