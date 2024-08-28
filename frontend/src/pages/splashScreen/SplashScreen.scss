@@ -2,8 +2,9 @@ $purple: #7b30f7;
 $white: #fff;
 $black: #111112;
 
-.splashScreen {
-    width: 100vw;
+@mixin splashScreen($width) {
+    
+    width: $width;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,5 +25,12 @@ $black: #111112;
         text-align: center;
         color: $white;
     }
+}
 
+.splashScreen {
+    @include splashScreen(100vw);
+}
+
+.smallSplashScreen {
+    @include splashScreen(50vw);
 }

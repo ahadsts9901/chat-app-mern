@@ -6,13 +6,15 @@
   align-items: flex-start;
 }
 .home .contacts,
-.home .chat {
-  width: 50%;
+.home .chat,
+.home .noChat {
+  width: 50vw;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow-x: hidden;
 }
 .home .contacts .users {
   width: 100%;

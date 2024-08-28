@@ -1,8 +1,8 @@
+import "./Home.css"
 import { useParams } from "react-router-dom"
 import Chat from "./Chat"
 import Contacts from "./Contacts"
-import "./Home.css"
-import SplashScreen from "../splashScreen/SplashScreen"
+import { SmallSplashScreen } from "../splashScreen/SplashScreen"
 
 const Home = () => {
 
@@ -14,7 +14,7 @@ const Home = () => {
         <Contacts />
         {
           userId ? <Chat userId={userId} /> :
-            <div className="noChat"><SplashScreen /></div>
+            <div className="noChat"><SmallSplashScreen /></div>
         }
       </div>
     </>
