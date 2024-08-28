@@ -1,0 +1,36 @@
+$purple: #7b30f7;
+$lightPurple: #c2b4e0;
+$white: #fff;
+$black: #1c1c1c;
+$lightBlack: #272529;
+$grey: #2d2d2d;
+$imageBg: #dedede;
+
+.chatForm {
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 0.7em;
+    background-color: $black;
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+
+    input {
+        padding: 0.7em;
+        border: 0;
+        border-radius: 4px;
+        background-color: $lightBlack;
+        color: $white;
+        width: 100%;
+    }
+
+    svg {
+        color: $white;
+    }
+
+}

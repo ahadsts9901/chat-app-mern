@@ -4,6 +4,7 @@ import axios from "axios"
 import { baseUrl } from "../../utils/core"
 import { SmallSplashScreen } from "../splashScreen/SplashScreen"
 import Header from "./components/contacts/Header"
+import ChatForm from "./components/chat/ChatForm"
 
 const Chat = ({ userId }: any) => {
 
@@ -40,6 +41,7 @@ const Chat = ({ userId }: any) => {
           !user ? <div className="noChat"><SmallSplashScreen /></div> :
             <>
               <Header user={user} />
+              <ChatForm />
             </>
         }
       </div>
