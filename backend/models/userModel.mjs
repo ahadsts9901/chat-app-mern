@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-import { defaultProfilePicture, emailPattern, userNamePattern } from "../core.mjs";
+import { defaultProfilePicture, emailPattern, userNamePattern } from "../utils/core.mjs";
 
 let userSchema = new Schema({
 

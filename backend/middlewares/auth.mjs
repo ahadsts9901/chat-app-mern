@@ -1,6 +1,6 @@
 import "dotenv/config"
 import jwt from "jsonwebtoken"
-import { errorMessages } from "../errorMessages.mjs"
+import { errorMessages } from "../utils/errorMessages.mjs"
 
 export const authMiddleware = async (req, res, next) => {
 

@@ -1,5 +1,5 @@
 import { userModel } from "../models/userModel.mjs"
-import { errorMessages } from "../errorMessages.mjs"
+import { errorMessages } from "../utils/errorMessages.mjs"
 import { isValidObjectId } from "mongoose"
 
 export const getProfileController = async (req, res, next) => {
