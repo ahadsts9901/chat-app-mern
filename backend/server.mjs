@@ -9,7 +9,7 @@ import { Server as socketIo } from "socket.io"
 import { allowedOrigins, globalIoObject } from "./utils/core.mjs"
 
 import { authRoutes, profileRoutes, userRoutes, chatRoutes } from "./routes/index.mjs"
-import { authMiddleware } from "./middlewares/index.mjs"
+import { authMiddleware, socketIoMiddleware } from "./middlewares/index.mjs"
 
 const app = express()
 
@@ -25,9 +25,10 @@ app.use("/api/v1", authRoutes, authMiddleware, profileRoutes, userRoutes, chatRo
 // socket io
 const server = createServer(app)
 
-const io = new socketIo(server, { cors: { origin: allowedOrigins, methods: "*" } })
+const io = new socketIo(server, { cors: { origin: allowedOrigins, methods: "*", credentials: true } })
 
 globalIoObject.io = io
+io.use(socketIoMiddleware)
 
 io.on("connection", (socket) => console.log(`new client connected with id: ${socket?.id}`))
 

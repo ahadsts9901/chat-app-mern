@@ -33,15 +33,15 @@ const Chat = ({ userId }: any) => {
 
   const listenSocketChannel = async () => {
 
-    const socket = io(baseUrl);
+    const socket = io(baseUrl, {
+      secure: true,
+      withCredentials: true
+    })
 
     socket.on('connect', () => console.log("connected"))
-
     socket.on('disconnect', (message) => console.log("socket disconnected from server: ", message))
-
-    socket.on(`chat-message-${currentUser?._id}`, async (e: any) => setMessages((prev: any) => [e, ...prev]))
-
-    socket.on(`delete-chat-message-${currentUser?._id}`, async (e: any) => setMessages((oldMessages: any) => oldMessages?.filter((message: any) => message?._id != e?.deletedMessageId)))
+    socket.on("SEND_MESSAGE", async (e: any) => setMessages((prev: any) => [e, ...prev]))
+    socket.on(`DELETE_MESSAGE`, async (e: any) => setMessages((oldMessages: any) => oldMessages?.filter((message: any) => message?._id != e?.deletedMessageId)))
 
     return () => socket.close()
 

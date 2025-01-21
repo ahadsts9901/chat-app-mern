@@ -1,7 +1,7 @@
 import { isValidObjectId } from "mongoose"
 import { errorMessages } from "../utils/errorMessages.mjs"
 import { chatModel } from "../models/index.mjs"
-import { globalIoObject } from "../utils/core.mjs"
+import { globalIoObject, socketUsers } from "../utils/core.mjs"
 
 export const sendMessageController = async (req, res) => {
 
@@ -54,10 +54,10 @@ export const sendMessageController = async (req, res) => {
             createdOn: resp?.createdOn
         }
 
-        if (globalIoObject?.io) {
+        if (socketUsers[to_id]) {
 
             console.log(`emitting message to ${to_id}`)
-            globalIoObject?.io?.emit(`chat-message-${to_id}`, messageToEmit)
+            socketUsers[to_id]?.emit(`SEND_MESSAGE`, messageToEmit)
 
         }
 
@@ -174,7 +174,7 @@ export const deleteMessageController = async (req, res) => {
         if (globalIoObject?.io) {
 
             console.log(`emitting message to ${deleteResponse?.to_id}`)
-            globalIoObject?.io?.emit(`delete-chat-message-${deleteResponse?.to_id}`, { deletedMessageId: deleteResponse?._id })
+            globalIoObject?.io?.emit(`DELETE_MESSAGE`, { deletedMessageId: deleteResponse?._id })
 
         }
 
